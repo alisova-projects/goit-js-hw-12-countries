@@ -12,6 +12,11 @@ refs.input.addEventListener('input', debounce(onInputFill, 500));
 function onInputFill(e) {
     e.preventDefault();
     const form = e.target;
+    const { value } = form;
+
+    if (value.length < 1) {
+        return;
+    }
     const searchQuery = refs.input.value;
 
     API.fetchCountry(searchQuery)
@@ -34,7 +39,6 @@ function renderCountryCard(countries) {
     }
     if (countries.length === 1) {
         err.hideError();
-        const markup = countryCardTpl(countries[0]);
-        refs.cardContainer.innerHTML = markup;
+        refs.cardContainer.innerHTML = countryCardTpl(countries[0]);
     }
 }

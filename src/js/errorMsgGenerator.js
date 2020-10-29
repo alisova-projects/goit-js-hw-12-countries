@@ -1,7 +1,7 @@
+const errorBox = document.querySelector(".form__error-box");
 import { error } from "@pnotify/core";
 import "@pnotify/core/dist/BrightTheme.css";
 import "@pnotify/core/dist/PNotify.css";
-
 import getRefs from "./getRefs.js";
 const refs = getRefs();
 
@@ -23,4 +23,4 @@ function hideError() {
   }
 }
 
-export default { errorMsgMarkUp, hideError };
+export default { errorMsgMarkUp, hideError }
